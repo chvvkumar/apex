@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<status software="4.53J_AB17" hardware="1.0">
+<hostname>apex</hostname>
+<serial>AC4:10016</serial>
+<timezone>-6.00</timezone>
+<date>01/28/2019 12:12:57</date>
+<power><failed>12/27/2018 10:36:27</failed>
+<restored>12/27/2018 10:37:04</restored></power>
+<probes>
+<probe>
+ <name>Tmp</name> <value>74.8 </value>
+ <type>Temp</type></probe></probes>
+<outlets>
+<outlet>
+ <name>Filter</name>
+ <outputID>0</outputID>
+ <state>ON</state>
+ <deviceID>base_Out1</deviceID>
+</outlet>
+<outlet>
+ <name>LightFront</name>
+ <outputID>1</outputID>
+ <state>AOF</state>
+ <deviceID>base_Out2</deviceID>
+</outlet>
+<outlet>
+ <name>LightBack</name>
+ <outputID>2</outputID>
+ <state>AOF</state>
+ <deviceID>base_Out3</deviceID>
+</outlet>
+<outlet>
+ <name>CO2</name>
+ <outputID>3</outputID>
+ <state>AOF</state>
+ <deviceID>base_Out4</deviceID>
+</outlet>
+<outlet>
+ <name>SndAlm_I6</name>
+ <outputID>4</outputID>
+ <state>OFF</state>
+ <deviceID>base_Alarm</deviceID>
+</outlet>
+<outlet>
+ <name>SndWrn_I7</name>
+ <outputID>5</outputID>
+ <state>AOF</state>
+ <deviceID>base_Warn</deviceID>
+</outlet>
+<outlet>
+ <name>EmailAlm_I5</name>
+ <outputID>6</outputID>
+ <state>AOF</state>
+ <deviceID>base_email</deviceID>
+</outlet>
+</outlets></status>
