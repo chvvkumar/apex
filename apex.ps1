@@ -1,5 +1,3 @@
-Helper function that converts a *simple* XML document to a nested hashtable
-# with ordered keys.
 function ConvertFrom-Xml {
   param([parameter(Mandatory, ValueFromPipeline)] [System.Xml.XmlNode] $node)
   process {
