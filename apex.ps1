@@ -1,3 +1,4 @@
+#!/usr/bin/pwsh
 function ConvertFrom-Xml {
   param([parameter(Mandatory, ValueFromPipeline)] [System.Xml.XmlNode] $node)
   process {
@@ -16,5 +17,5 @@ function ConvertFrom-Xml {
   }
 }
 
-[xml[]](New-Object System.Net.WebClient).DownloadString("http://apex.lan/cgi-bin/status.xml") | ConvertFrom-Xml | ConvertTo-Json -Depth 100
+[xml[]](New-Object System.Net.WebClient).DownloadString("http://apex.lan:1982/cgi-bin/status.xml") | ConvertFrom-Xml | ConvertTo-Json -Depth 100
 
