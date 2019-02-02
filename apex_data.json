@@ -1,0 +1,159 @@
+{
+  "status": [
+    {
+      "hostname": "apex"
+    },
+    {
+      "serial": "AC4:10016"
+    },
+    {
+      "timezone": "-6.00"
+    },
+    {
+      "date": "02/02/2019 11:03:25"
+    },
+    {
+      "power": [
+        {
+          "failed": "02/01/2019 22:12:06"
+        },
+        {
+          "restored": "02/01/2019 22:12:54"
+        }
+      ]
+    },
+    {
+      "probes": [
+        {
+          "Tmp": [
+            {
+              "name": "Tmp"
+            },
+            {
+              "value": "75.1 "
+            },
+            {
+              "type": "Temp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "outlets": [
+        {
+          "Filter": [
+            {
+              "name": "Filter"
+            },
+            {
+              "outputID": "0"
+            },
+            {
+              "state": "ON"
+            },
+            {
+              "deviceID": "base_Out1"
+            }
+          ]
+        },
+        {
+          "LightFront": [
+            {
+              "name": "LightFront"
+            },
+            {
+              "outputID": "1"
+            },
+            {
+              "state": "AON"
+            },
+            {
+              "deviceID": "base_Out2"
+            }
+          ]
+        },
+        {
+          "LightBack": [
+            {
+              "name": "LightBack"
+            },
+            {
+              "outputID": "2"
+            },
+            {
+              "state": "AON"
+            },
+            {
+              "deviceID": "base_Out3"
+            }
+          ]
+        },
+        {
+          "CO2": [
+            {
+              "name": "CO2"
+            },
+            {
+              "outputID": "3"
+            },
+            {
+              "state": "AON"
+            },
+            {
+              "deviceID": "base_Out4"
+            }
+          ]
+        },
+        {
+          "SndAlm_I6": [
+            {
+              "name": "SndAlm_I6"
+            },
+            {
+              "outputID": "4"
+            },
+            {
+              "state": "OFF"
+            },
+            {
+              "deviceID": "base_Alarm"
+            }
+          ]
+        },
+        {
+          "SndWrn_I7": [
+            {
+              "name": "SndWrn_I7"
+            },
+            {
+              "outputID": "5"
+            },
+            {
+              "state": "AOF"
+            },
+            {
+              "deviceID": "base_Warn"
+            }
+          ]
+        },
+        {
+          "EmailAlm_I5": [
+            {
+              "name": "EmailAlm_I5"
+            },
+            {
+              "outputID": "6"
+            },
+            {
+              "state": "AOF"
+            },
+            {
+              "deviceID": "base_email"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

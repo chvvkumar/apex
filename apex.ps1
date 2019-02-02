@@ -17,5 +17,5 @@ function ConvertFrom-Xml {
   }
 }
 
-[xml[]](New-Object System.Net.WebClient).DownloadString("http://apex.lan:1982/cgi-bin/status.xml") | ConvertFrom-Xml | ConvertTo-Json -Depth 100
+[xml[]](New-Object System.Net.WebClient).DownloadString("http://apex.lan:1982/cgi-bin/status.xml") | ConvertFrom-Xml | ConvertTo-Json -Depth 100 | out-file apex_data.json
 
