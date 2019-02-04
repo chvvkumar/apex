@@ -1,3 +1,7 @@
+Demo:
+
+https://grafana.challa.co/d/USuIX9_ik/aquarium-status?refresh=5s&orgId=1
+
 Telegraf Config.:
 
 
