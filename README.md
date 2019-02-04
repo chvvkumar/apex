@@ -1,6 +1,10 @@
-Neptune Apex Grafana Dashboard:
+  Neptune Apex Grafana Dashboard:
 
 A TIG stack config to monitor [Neptune Systems' Apex series of aquarium controllers](https://www.neptunesystems.com/)
+
+  Demo:
+
+https://grafana.challa.co/d/USuIX9_ik/aquarium-status?refresh=5s&orgId=1&kiosk
   
   Prerequisites:
 
@@ -19,7 +23,7 @@ Replace the "apex.lan" with your apex controller host name
     servers = [ "http://apex.lan" ]    
     #response_timeout = "5s"
 
-Dashboard:
+  Dashboard:
 The JSON dashboard can be found within this repo. Import it into your grafana instance.
 
 ![Neptune Apex Grafana Dashboard](https://i.imgur.com/YGdCHna.png)
