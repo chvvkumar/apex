@@ -34,5 +34,5 @@ Replace the "apex.lan" with your apex controller host name
 
 The JSON dashboard can be found within this repo. Import it into your grafana instance.
 
-![Neptune Apex Grafana Dashboard](https://i.imgur.com/doXhJtn.png)
+![Neptune Apex Grafana Dashboard](https://i.imgur.com/0iA8Fd3.png)
 
