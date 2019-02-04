@@ -1,0 +1,69 @@
+---------------------------------------
+Schedule:
+Front Lights:   ON: M-F -> 03.30PM - 10:30PM
+                    S&S -> 10.30AM - 05:30PM
+Back Lights:    ON: M-F -> 03.00PM - 11:00PM
+                    S&S -> 11.00AM - 06:00PM
+
+CO2:            ON: M-F -> 03.00PM - 11:00PM
+                    S&S -> 11.00AM - 06:00PM
+
+Heater:         ON: If Temp. < 76 or > 77
+
+---------------------------------------
+Virtual Outlet Definitions:
+---------------------------------------
+
+Front lights:
+fl_weekday
+fl_weekend
+
+Back lights:
+bl_weekday
+bl_weekend
+
+CO2:
+co2_weekday
+co2_weekend
+
+---------------------------------------
+Virtual Outlet Config
+---------------------------------------
+fl_weekend
+If Time 10:30 to 17:30 Then ON
+If DoW _MTWTF_ Then OFF
+
+fl_weekday
+If Time 15:30 to 22:30 Then ON
+If DoW S_____S Then OFF
+
+bl_weekend
+If Time 10:00 to 18:00 Then ON
+If DoW _MTWTF_ Then OFF
+
+bl_weekday
+If Time 15:00 to 23:00 Then ON
+If DoW S_____S Then OFF
+
+co2_weekend
+If Time 10:30 to 17:30 Then ON
+If DoW _MTWTF_ Then OFF
+
+co2_weekday
+If Time 15:30 to 22:30 Then ON
+If DoW S_____S Then OFF
+
+---------------------------------------
+Physical Outlet Config
+---------------------------------------
+Set Off
+If Outlet fl_weekday = ON Then ON
+If Outlet fl_weekend = ON Then ON
+
+Set Off
+If Outlet bl_weekday = ON Then ON
+If Outlet bl_weekend = ON Then ON
+
+Set Off
+If Outlet co2_weekday = ON Then ON
+If Outlet co2_weekend = ON Then ON
