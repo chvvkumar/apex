@@ -10,4 +10,4 @@ Telegraf Config.:
 
 Neptune Apex Grafana Dashboard:
 
-![Neptune Apex Grafana Dashboard](https://i.imgur.com/KTfPB8i.png)
+![Neptune Apex Grafana Dashboard](https://i.imgur.com/YGdCHna.png)
