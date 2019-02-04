@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 76,
-  "iteration": 1549243962449,
+  "iteration": 1549244852961,
   "links": [],
   "panels": [
     {
@@ -30,7 +30,7 @@
       ],
       "datasource": "influxdb",
       "decimals": 1,
-      "format": "celsius",
+      "format": "farenheit",
       "gauge": {
         "maxValue": 100,
         "minValue": 0,
@@ -1315,6 +1315,7 @@
       },
       "lines": true,
       "linewidth": 1,
+      "links": [],
       "nullPointMode": "null",
       "percentage": false,
       "pointradius": 5,
@@ -1372,7 +1373,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Panel Title",
+      "title": "Aquarium Temperature",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1388,7 +1389,7 @@
       },
       "yaxes": [
         {
-          "format": "celsius",
+          "format": "farenheit",
           "label": null,
           "logBase": 1,
           "max": "100",
@@ -1489,5 +1490,5 @@
   "timezone": "",
   "title": "Aquarium Status",
   "uid": "USuIX9_ik",
-  "version": 13
+  "version": 14
 }
