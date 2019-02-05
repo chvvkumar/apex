@@ -16,9 +16,53 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 76,
-  "iteration": 1549244852961,
   "links": [],
   "panels": [
+    {
+      "content": "# Probes",
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 0,
+        "y": 0
+      },
+      "id": 31,
+      "links": [],
+      "mode": "markdown",
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "content": "# Physical Outlets",
+      "gridPos": {
+        "h": 3,
+        "w": 6,
+        "x": 4,
+        "y": 0
+      },
+      "id": 18,
+      "links": [],
+      "mode": "markdown",
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "content": "# Virtual Outlets",
+      "gridPos": {
+        "h": 3,
+        "w": 9,
+        "x": 10,
+        "y": 0
+      },
+      "id": 19,
+      "links": [],
+      "mode": "markdown",
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
     {
       "cacheTimeout": null,
       "colorBackground": false,
@@ -33,16 +77,16 @@
       "format": "farenheit",
       "gauge": {
         "maxValue": 100,
-        "minValue": 0,
-        "show": false,
+        "minValue": 50,
+        "show": true,
         "thresholdLabels": false,
         "thresholdMarkers": true
       },
       "gridPos": {
-        "h": 3,
-        "w": 3,
+        "h": 6,
+        "w": 4,
         "x": 0,
-        "y": 0
+        "y": 3
       },
       "id": 8,
       "interval": null,
@@ -138,7 +182,7 @@
     },
     {
       "cacheTimeout": null,
-      "colorBackground": false,
+      "colorBackground": true,
       "colorValue": false,
       "colors": [
         "#299c46",
@@ -156,11 +200,11 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 2,
-        "x": 3,
-        "y": 0
+        "w": 3,
+        "x": 4,
+        "y": 3
       },
-      "id": 5,
+      "id": 20,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -206,7 +250,7 @@
             },
             {
               "params": [
-                "null"
+                "previous"
               ],
               "type": "fill"
             }
@@ -220,7 +264,7 @@
             [
               {
                 "params": [
-                  "state"
+                  "state_code"
                 ],
                 "type": "field"
               },
@@ -239,22 +283,37 @@
           ]
         }
       ],
-      "thresholds": "",
+      "thresholds": "4",
       "title": "Heater",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
         {
           "op": "=",
-          "text": "N/A",
-          "value": "null"
+          "text": "Auto ON",
+          "value": "1"
+        },
+        {
+          "op": "=",
+          "text": "Manual ON",
+          "value": "2"
+        },
+        {
+          "op": "=",
+          "text": "Auto OFF",
+          "value": "3"
+        },
+        {
+          "op": "=",
+          "text": "Manual OFF",
+          "value": "4"
         }
       ],
       "valueName": "current"
     },
     {
       "cacheTimeout": null,
-      "colorBackground": false,
+      "colorBackground": true,
       "colorValue": false,
       "colors": [
         "#299c46",
@@ -272,11 +331,11 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 2,
-        "x": 5,
-        "y": 0
+        "w": 3,
+        "x": 7,
+        "y": 3
       },
-      "id": 7,
+      "id": 21,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -322,7 +381,7 @@
             },
             {
               "params": [
-                "null"
+                "previous"
               ],
               "type": "fill"
             }
@@ -336,7 +395,7 @@
             [
               {
                 "params": [
-                  "state"
+                  "state_code"
                 ],
                 "type": "field"
               },
@@ -355,248 +414,37 @@
           ]
         }
       ],
-      "thresholds": "",
+      "thresholds": "4",
       "title": "Light (Front)",
       "type": "singlestat",
       "valueFontSize": "80%",
-      "valueMaps": [],
-      "valueName": "current"
-    },
-    {
-      "cacheTimeout": null,
-      "colorBackground": false,
-      "colorValue": false,
-      "colors": [
-        "#299c46",
-        "rgba(237, 129, 40, 0.89)",
-        "#d44a3a"
-      ],
-      "datasource": "influxdb",
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
-      "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 7,
-        "y": 0
-      },
-      "id": 6,
-      "interval": null,
-      "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "rgba(31, 118, 189, 0.18)",
-        "full": false,
-        "lineColor": "rgb(31, 120, 193)",
-        "show": false
-      },
-      "tableColumn": "",
-      "targets": [
-        {
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "neptune_apex",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "state"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "name",
-              "operator": "=",
-              "value": "LightBack"
-            }
-          ]
-        }
-      ],
-      "thresholds": "",
-      "title": "Light (Back)",
-      "type": "singlestat",
-      "valueFontSize": "80%",
       "valueMaps": [
         {
           "op": "=",
-          "text": "N/A",
-          "value": "null"
-        }
-      ],
-      "valueName": "current"
-    },
-    {
-      "cacheTimeout": null,
-      "colorBackground": false,
-      "colorValue": false,
-      "colors": [
-        "#299c46",
-        "rgba(237, 129, 40, 0.89)",
-        "#d44a3a"
-      ],
-      "datasource": "influxdb",
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
-      "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 9,
-        "y": 0
-      },
-      "id": 4,
-      "interval": null,
-      "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
+          "text": "Auto ON",
+          "value": "1"
         },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "rgba(31, 118, 189, 0.18)",
-        "full": false,
-        "lineColor": "rgb(31, 120, 193)",
-        "show": false
-      },
-      "tableColumn": "",
-      "targets": [
-        {
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "neptune_apex",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "state"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "name",
-              "operator": "=",
-              "value": "CO2"
-            }
-          ]
-        }
-      ],
-      "thresholds": "",
-      "title": "CO2",
-      "type": "singlestat",
-      "valueFontSize": "80%",
-      "valueMaps": [
         {
           "op": "=",
-          "text": "N/A",
-          "value": "null"
+          "text": "Manual ON",
+          "value": "2"
+        },
+        {
+          "op": "=",
+          "text": "Auto OFF",
+          "value": "3"
+        },
+        {
+          "op": "=",
+          "text": "Manual OFF",
+          "value": "4"
         }
       ],
       "valueName": "current"
     },
     {
       "cacheTimeout": null,
-      "colorBackground": false,
+      "colorBackground": true,
       "colorValue": false,
       "colors": [
         "#299c46",
@@ -614,11 +462,11 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 2,
-        "x": 12,
-        "y": 0
+        "w": 3,
+        "x": 10,
+        "y": 3
       },
-      "id": 9,
+      "id": 24,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -664,7 +512,7 @@
             },
             {
               "params": [
-                "null"
+                "previous"
               ],
               "type": "fill"
             }
@@ -678,7 +526,7 @@
             [
               {
                 "params": [
-                  "state"
+                  "state_code"
                 ],
                 "type": "field"
               },
@@ -697,22 +545,37 @@
           ]
         }
       ],
-      "thresholds": "",
-      "title": "fl_weekday",
+      "thresholds": "4",
+      "title": "FL_WeekDay",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
         {
           "op": "=",
-          "text": "N/A",
-          "value": "null"
+          "text": "Auto ON",
+          "value": "1"
+        },
+        {
+          "op": "=",
+          "text": "Manual ON",
+          "value": "2"
+        },
+        {
+          "op": "=",
+          "text": "Auto OFF",
+          "value": "3"
+        },
+        {
+          "op": "=",
+          "text": "Manual OFF",
+          "value": "4"
         }
       ],
       "valueName": "current"
     },
     {
       "cacheTimeout": null,
-      "colorBackground": false,
+      "colorBackground": true,
       "colorValue": false,
       "colors": [
         "#299c46",
@@ -730,11 +593,11 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 2,
-        "x": 14,
-        "y": 0
+        "w": 3,
+        "x": 13,
+        "y": 3
       },
-      "id": 11,
+      "id": 26,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -780,7 +643,7 @@
             },
             {
               "params": [
-                "null"
+                "previous"
               ],
               "type": "fill"
             }
@@ -794,123 +657,7 @@
             [
               {
                 "params": [
-                  "state"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "name",
-              "operator": "=",
-              "value": "fl_weekend"
-            }
-          ]
-        }
-      ],
-      "thresholds": "",
-      "title": "fl_weekend",
-      "type": "singlestat",
-      "valueFontSize": "80%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        }
-      ],
-      "valueName": "current"
-    },
-    {
-      "cacheTimeout": null,
-      "colorBackground": false,
-      "colorValue": false,
-      "colors": [
-        "#299c46",
-        "rgba(237, 129, 40, 0.89)",
-        "#d44a3a"
-      ],
-      "datasource": "influxdb",
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
-      "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 16,
-        "y": 0
-      },
-      "id": 10,
-      "interval": null,
-      "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "rgba(31, 118, 189, 0.18)",
-        "full": false,
-        "lineColor": "rgb(31, 120, 193)",
-        "show": false
-      },
-      "tableColumn": "",
-      "targets": [
-        {
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "neptune_apex",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "state"
+                  "state_code"
                 ],
                 "type": "field"
               },
@@ -929,22 +676,37 @@
           ]
         }
       ],
-      "thresholds": "",
-      "title": "bl_weekday",
+      "thresholds": "4",
+      "title": "BL_WeekDay",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
         {
           "op": "=",
-          "text": "N/A",
-          "value": "null"
+          "text": "Auto ON",
+          "value": "1"
+        },
+        {
+          "op": "=",
+          "text": "Manual ON",
+          "value": "2"
+        },
+        {
+          "op": "=",
+          "text": "Auto OFF",
+          "value": "3"
+        },
+        {
+          "op": "=",
+          "text": "Manual OFF",
+          "value": "4"
         }
       ],
       "valueName": "current"
     },
     {
       "cacheTimeout": null,
-      "colorBackground": false,
+      "colorBackground": true,
       "colorValue": false,
       "colors": [
         "#299c46",
@@ -962,11 +724,11 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 2,
-        "x": 18,
-        "y": 0
+        "w": 3,
+        "x": 16,
+        "y": 3
       },
-      "id": 12,
+      "id": 28,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -1012,7 +774,7 @@
             },
             {
               "params": [
-                "null"
+                "previous"
               ],
               "type": "fill"
             }
@@ -1026,123 +788,7 @@
             [
               {
                 "params": [
-                  "state"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "name",
-              "operator": "=",
-              "value": "bl_weekend"
-            }
-          ]
-        }
-      ],
-      "thresholds": "",
-      "title": "bl_weekend",
-      "type": "singlestat",
-      "valueFontSize": "80%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        }
-      ],
-      "valueName": "current"
-    },
-    {
-      "cacheTimeout": null,
-      "colorBackground": false,
-      "colorValue": false,
-      "colors": [
-        "#299c46",
-        "rgba(237, 129, 40, 0.89)",
-        "#d44a3a"
-      ],
-      "datasource": "influxdb",
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
-      "gridPos": {
-        "h": 3,
-        "w": 2,
-        "x": 20,
-        "y": 0
-      },
-      "id": 13,
-      "interval": null,
-      "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "rgba(31, 118, 189, 0.18)",
-        "full": false,
-        "lineColor": "rgb(31, 120, 193)",
-        "show": false
-      },
-      "tableColumn": "",
-      "targets": [
-        {
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "neptune_apex",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "state"
+                  "state_code"
                 ],
                 "type": "field"
               },
@@ -1161,22 +807,37 @@
           ]
         }
       ],
-      "thresholds": "",
-      "title": "co2_weekday",
+      "thresholds": "4",
+      "title": "CO2_WeekDay",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
         {
           "op": "=",
-          "text": "N/A",
-          "value": "null"
+          "text": "Auto ON",
+          "value": "1"
+        },
+        {
+          "op": "=",
+          "text": "Manual ON",
+          "value": "2"
+        },
+        {
+          "op": "=",
+          "text": "Auto OFF",
+          "value": "3"
+        },
+        {
+          "op": "=",
+          "text": "Manual OFF",
+          "value": "4"
         }
       ],
       "valueName": "current"
     },
     {
       "cacheTimeout": null,
-      "colorBackground": false,
+      "colorBackground": true,
       "colorValue": false,
       "colors": [
         "#299c46",
@@ -1194,11 +855,11 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 2,
-        "x": 22,
-        "y": 0
+        "w": 3,
+        "x": 4,
+        "y": 6
       },
-      "id": 14,
+      "id": 23,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -1244,7 +905,7 @@
             },
             {
               "params": [
-                "null"
+                "previous"
               ],
               "type": "fill"
             }
@@ -1258,7 +919,531 @@
             [
               {
                 "params": [
-                  "state"
+                  "state_code"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "name",
+              "operator": "=",
+              "value": "CO2"
+            }
+          ]
+        }
+      ],
+      "thresholds": "4",
+      "title": "CO2",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "Auto ON",
+          "value": "1"
+        },
+        {
+          "op": "=",
+          "text": "Manual ON",
+          "value": "2"
+        },
+        {
+          "op": "=",
+          "text": "Auto OFF",
+          "value": "3"
+        },
+        {
+          "op": "=",
+          "text": "Manual OFF",
+          "value": "4"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "influxdb",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 7,
+        "y": 6
+      },
+      "id": 22,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "previous"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "neptune_apex",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "state_code"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "name",
+              "operator": "=",
+              "value": "LightBack"
+            }
+          ]
+        }
+      ],
+      "thresholds": "4",
+      "title": "Light (Back)",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "Auto ON",
+          "value": "1"
+        },
+        {
+          "op": "=",
+          "text": "Manual ON",
+          "value": "2"
+        },
+        {
+          "op": "=",
+          "text": "Auto OFF",
+          "value": "3"
+        },
+        {
+          "op": "=",
+          "text": "Manual OFF",
+          "value": "4"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "influxdb",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 10,
+        "y": 6
+      },
+      "id": 25,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "previous"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "neptune_apex",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "state_code"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "name",
+              "operator": "=",
+              "value": "fl_weekend"
+            }
+          ]
+        }
+      ],
+      "thresholds": "4",
+      "title": "FL_Weekend",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "Auto ON",
+          "value": "1"
+        },
+        {
+          "op": "=",
+          "text": "Manual ON",
+          "value": "2"
+        },
+        {
+          "op": "=",
+          "text": "Auto OFF",
+          "value": "3"
+        },
+        {
+          "op": "=",
+          "text": "Manual OFF",
+          "value": "4"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "influxdb",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 13,
+        "y": 6
+      },
+      "id": 27,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "previous"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "neptune_apex",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "state_code"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "name",
+              "operator": "=",
+              "value": "bl_weekend"
+            }
+          ]
+        }
+      ],
+      "thresholds": "4",
+      "title": "BL_Weekend",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "Auto ON",
+          "value": "1"
+        },
+        {
+          "op": "=",
+          "text": "Manual ON",
+          "value": "2"
+        },
+        {
+          "op": "=",
+          "text": "Auto OFF",
+          "value": "3"
+        },
+        {
+          "op": "=",
+          "text": "Manual OFF",
+          "value": "4"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "influxdb",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 16,
+        "y": 6
+      },
+      "id": 29,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "previous"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "neptune_apex",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "state_code"
                 ],
                 "type": "field"
               },
@@ -1277,15 +1462,30 @@
           ]
         }
       ],
-      "thresholds": "",
-      "title": "co2_weekend",
+      "thresholds": "4",
+      "title": "CO2_Weekend",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
         {
           "op": "=",
-          "text": "N/A",
-          "value": "null"
+          "text": "Auto ON",
+          "value": "1"
+        },
+        {
+          "op": "=",
+          "text": "Manual ON",
+          "value": "2"
+        },
+        {
+          "op": "=",
+          "text": "Auto OFF",
+          "value": "3"
+        },
+        {
+          "op": "=",
+          "text": "Manual OFF",
+          "value": "4"
         }
       ],
       "valueName": "current"
@@ -1296,22 +1496,26 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "influxdb",
+      "decimals": 1,
       "fill": 1,
       "gridPos": {
         "h": 10,
-        "w": 21,
+        "w": 19,
         "x": 0,
-        "y": 3
+        "y": 9
       },
       "id": 2,
       "legend": {
+        "alignAsTable": true,
         "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": false,
+        "current": true,
+        "max": true,
+        "min": true,
+        "rightSide": false,
+        "show": true,
+        "sideWidth": 200,
         "total": false,
-        "values": false
+        "values": true
       },
       "lines": true,
       "linewidth": 1,
@@ -1321,12 +1525,18 @@
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
-      "seriesOverrides": [],
+      "seriesOverrides": [
+        {
+          "alias": "Temperature",
+          "color": "#82b5d8"
+        }
+      ],
       "spaceLength": 10,
       "stack": false,
       "steppedLine": false,
       "targets": [
         {
+          "alias": "Temperature",
           "groupBy": [
             {
               "params": [
@@ -1369,7 +1579,25 @@
           ]
         }
       ],
-      "thresholds": [],
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": false,
+          "line": true,
+          "op": "gt",
+          "value": 80,
+          "yaxis": "left"
+        },
+        {
+          "colorMode": "custom",
+          "fill": false,
+          "line": true,
+          "lineColor": "#1f78c1",
+          "op": "lt",
+          "value": 75,
+          "yaxis": "left"
+        }
+      ],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
@@ -1389,11 +1617,12 @@
       },
       "yaxes": [
         {
+          "decimals": null,
           "format": "farenheit",
           "label": null,
           "logBase": 1,
-          "max": "100",
-          "min": "60",
+          "max": "85",
+          "min": "70",
           "show": true
         },
         {
@@ -1409,20 +1638,6 @@
         "align": false,
         "alignLevel": null
       }
-    },
-    {
-      "content": "\n| Status \t| Description \t|\n|--------\t|-------------\t|\n| AON    \t| Auto ON     \t|\n| AOF    \t| Auto OFF    \t|\n| ON     \t| Manual ON   \t|\n| OFF    \t| Manual OFF  \t|",
-      "gridPos": {
-        "h": 10,
-        "w": 3,
-        "x": 21,
-        "y": 3
-      },
-      "id": 16,
-      "links": [],
-      "mode": "markdown",
-      "title": "Status Legend",
-      "type": "text"
     }
   ],
   "refresh": "5s",
@@ -1430,33 +1645,7 @@
   "style": "dark",
   "tags": [],
   "templating": {
-    "list": [
-      {
-        "allValue": null,
-        "current": {
-          "text": "CO2",
-          "value": "CO2"
-        },
-        "datasource": "influxdb",
-        "definition": "SHOW TAG VALUES FROM \"neptune_apex\" WITH KEY = \"name\"",
-        "hide": 0,
-        "includeAll": true,
-        "label": null,
-        "multi": true,
-        "name": "Outlet",
-        "options": [],
-        "query": "SHOW TAG VALUES FROM \"neptune_apex\" WITH KEY = \"name\"",
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
-        "tagValuesQuery": "",
-        "tags": [],
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
-      }
-    ]
+    "list": []
   },
   "time": {
     "from": "now-24h",
@@ -1490,5 +1679,5 @@
   "timezone": "",
   "title": "Aquarium Status",
   "uid": "USuIX9_ik",
-  "version": 14
+  "version": 27
 }
