@@ -27,6 +27,24 @@ Replace the "apex.lan" with your apex controller host name
     servers = [ "http://apex.lan" ]
     
     #response_timeout = "5s"
+    
+    ###############################################################################
+    #                            PROCESSOR PLUGINS                                #
+    ###############################################################################
+    
+    [[processors.enum]]
+     namepass = ["neptune_apex"]
+     [[processors.enum.mapping]]
+      field = "state"
+      dest = "state_code"
+      default = 0
+      [processors.enum.mapping.value_mappings]
+       AON = 1
+       ON  = 2
+       AOF = 3
+       OFF = 4
+
+
 
   
 
@@ -34,5 +52,5 @@ Replace the "apex.lan" with your apex controller host name
 
 The JSON dashboard can be found within this repo. Import it into your grafana instance.
 
-![Neptune Apex Grafana Dashboard](https://i.imgur.com/0iA8Fd3.png)
+![Neptune Apex Grafana Dashboard](https://i.imgur.com/nDOifZn.png)
 
