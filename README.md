@@ -5,6 +5,12 @@ A TIG stack config to monitor [Neptune Systems' Apex series of aquarium controll
 ## Demo:
 https://grafana.challa.co/d/USuIX9_ik/aquarium-status?refresh=5s&orgId=1&kiosk
 
+## Dashboard:
+
+The JSON dashboard can be found within this repo. Import it into your grafana instance.
+
+![Neptune Apex Grafana Dashboard](https://i.imgur.com/nDOifZn.png)
+
 ## Prerequisites:
 1. Installed and working Inflixdb, Grafana and Telegrafa
 
@@ -48,9 +54,4 @@ Replace the "apex.lan" with your apex controller host name
 
   
 
-## Dashboard:
-
-The JSON dashboard can be found within this repo. Import it into your grafana instance.
-
-![Neptune Apex Grafana Dashboard](https://i.imgur.com/nDOifZn.png)
 
