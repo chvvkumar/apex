@@ -37,7 +37,7 @@
       "content": "# Physical Outlets",
       "gridPos": {
         "h": 3,
-        "w": 6,
+        "w": 8,
         "x": 4,
         "y": 0
       },
@@ -52,8 +52,8 @@
       "content": "# Virtual Outlets",
       "gridPos": {
         "h": 3,
-        "w": 9,
-        "x": 10,
+        "w": 12,
+        "x": 12,
         "y": 0
       },
       "id": 19,
@@ -76,8 +76,8 @@
       "decimals": 1,
       "format": "farenheit",
       "gauge": {
-        "maxValue": 100,
-        "minValue": 50,
+        "maxValue": 85,
+        "minValue": 70,
         "show": true,
         "thresholdLabels": false,
         "thresholdMarkers": true
@@ -186,7 +186,7 @@
       "colorValue": false,
       "colors": [
         "#299c46",
-        "rgba(237, 129, 40, 0.89)",
+        "#cca300",
         "#d44a3a"
       ],
       "datasource": "influxdb",
@@ -200,7 +200,7 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 3,
+        "w": 4,
         "x": 4,
         "y": 3
       },
@@ -283,7 +283,7 @@
           ]
         }
       ],
-      "thresholds": "4",
+      "thresholds": "3,4",
       "title": "Heater",
       "type": "singlestat",
       "valueFontSize": "80%",
@@ -317,7 +317,7 @@
       "colorValue": false,
       "colors": [
         "#299c46",
-        "rgba(237, 129, 40, 0.89)",
+        "#cca300",
         "#d44a3a"
       ],
       "datasource": "influxdb",
@@ -331,8 +331,8 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 3,
-        "x": 7,
+        "w": 4,
+        "x": 8,
         "y": 3
       },
       "id": 21,
@@ -414,7 +414,7 @@
           ]
         }
       ],
-      "thresholds": "4",
+      "thresholds": "3,4",
       "title": "Light (Front)",
       "type": "singlestat",
       "valueFontSize": "80%",
@@ -448,7 +448,7 @@
       "colorValue": false,
       "colors": [
         "#299c46",
-        "rgba(237, 129, 40, 0.89)",
+        "#cca300",
         "#d44a3a"
       ],
       "datasource": "influxdb",
@@ -462,8 +462,8 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 3,
-        "x": 10,
+        "w": 4,
+        "x": 12,
         "y": 3
       },
       "id": 24,
@@ -545,7 +545,7 @@
           ]
         }
       ],
-      "thresholds": "4",
+      "thresholds": "3,4",
       "title": "FL_WeekDay",
       "type": "singlestat",
       "valueFontSize": "80%",
@@ -579,7 +579,7 @@
       "colorValue": false,
       "colors": [
         "#299c46",
-        "rgba(237, 129, 40, 0.89)",
+        "#cca300",
         "#d44a3a"
       ],
       "datasource": "influxdb",
@@ -593,8 +593,8 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 3,
-        "x": 13,
+        "w": 4,
+        "x": 16,
         "y": 3
       },
       "id": 26,
@@ -676,7 +676,7 @@
           ]
         }
       ],
-      "thresholds": "4",
+      "thresholds": "3,4",
       "title": "BL_WeekDay",
       "type": "singlestat",
       "valueFontSize": "80%",
@@ -710,7 +710,7 @@
       "colorValue": false,
       "colors": [
         "#299c46",
-        "rgba(237, 129, 40, 0.89)",
+        "#cca300",
         "#d44a3a"
       ],
       "datasource": "influxdb",
@@ -724,8 +724,8 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 3,
-        "x": 16,
+        "w": 4,
+        "x": 20,
         "y": 3
       },
       "id": 28,
@@ -807,7 +807,7 @@
           ]
         }
       ],
-      "thresholds": "4",
+      "thresholds": "3,4",
       "title": "CO2_WeekDay",
       "type": "singlestat",
       "valueFontSize": "80%",
@@ -841,7 +841,7 @@
       "colorValue": false,
       "colors": [
         "#299c46",
-        "rgba(237, 129, 40, 0.89)",
+        "#cca300",
         "#d44a3a"
       ],
       "datasource": "influxdb",
@@ -855,7 +855,7 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 3,
+        "w": 4,
         "x": 4,
         "y": 6
       },
@@ -938,7 +938,7 @@
           ]
         }
       ],
-      "thresholds": "4",
+      "thresholds": "3,4",
       "title": "CO2",
       "type": "singlestat",
       "valueFontSize": "80%",
@@ -972,7 +972,7 @@
       "colorValue": false,
       "colors": [
         "#299c46",
-        "rgba(237, 129, 40, 0.89)",
+        "#cca300",
         "#d44a3a"
       ],
       "datasource": "influxdb",
@@ -986,8 +986,8 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 3,
-        "x": 7,
+        "w": 4,
+        "x": 8,
         "y": 6
       },
       "id": 22,
@@ -1069,7 +1069,7 @@
           ]
         }
       ],
-      "thresholds": "4",
+      "thresholds": "3,4",
       "title": "Light (Back)",
       "type": "singlestat",
       "valueFontSize": "80%",
@@ -1103,7 +1103,7 @@
       "colorValue": false,
       "colors": [
         "#299c46",
-        "rgba(237, 129, 40, 0.89)",
+        "#cca300",
         "#d44a3a"
       ],
       "datasource": "influxdb",
@@ -1117,8 +1117,8 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 3,
-        "x": 10,
+        "w": 4,
+        "x": 12,
         "y": 6
       },
       "id": 25,
@@ -1200,7 +1200,7 @@
           ]
         }
       ],
-      "thresholds": "4",
+      "thresholds": "3,4",
       "title": "FL_Weekend",
       "type": "singlestat",
       "valueFontSize": "80%",
@@ -1234,7 +1234,7 @@
       "colorValue": false,
       "colors": [
         "#299c46",
-        "rgba(237, 129, 40, 0.89)",
+        "#cca300",
         "#d44a3a"
       ],
       "datasource": "influxdb",
@@ -1248,8 +1248,8 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 3,
-        "x": 13,
+        "w": 4,
+        "x": 16,
         "y": 6
       },
       "id": 27,
@@ -1331,7 +1331,7 @@
           ]
         }
       ],
-      "thresholds": "4",
+      "thresholds": "3,4",
       "title": "BL_Weekend",
       "type": "singlestat",
       "valueFontSize": "80%",
@@ -1365,7 +1365,7 @@
       "colorValue": false,
       "colors": [
         "#299c46",
-        "rgba(237, 129, 40, 0.89)",
+        "#cca300",
         "#d44a3a"
       ],
       "datasource": "influxdb",
@@ -1379,8 +1379,8 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 3,
-        "x": 16,
+        "w": 4,
+        "x": 20,
         "y": 6
       },
       "id": 29,
@@ -1462,7 +1462,7 @@
           ]
         }
       ],
-      "thresholds": "4",
+      "thresholds": "3,4",
       "title": "CO2_Weekend",
       "type": "singlestat",
       "valueFontSize": "80%",
@@ -1500,7 +1500,7 @@
       "fill": 1,
       "gridPos": {
         "h": 10,
-        "w": 19,
+        "w": 24,
         "x": 0,
         "y": 9
       },
@@ -1679,5 +1679,5 @@
   "timezone": "",
   "title": "Aquarium Status",
   "uid": "USuIX9_ik",
-  "version": 27
+  "version": 35
 }
