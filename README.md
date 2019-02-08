@@ -9,7 +9,7 @@ https://grafana.challa.co/d/USuIX9_ik/aquarium-status?refresh=5s&orgId=1&kiosk
 
 The JSON dashboard can be found within this repo. Import it into your grafana instance.
 
-![Neptune Apex Grafana Dashboard](https://i.imgur.com/nDOifZn.png)
+![Neptune Apex Grafana Dashboard](https://i.imgur.com/8UF6ykv.png)
 
 ## Prerequisites:
 1. Installed and working Inflixdb, Grafana and Telegrafa
