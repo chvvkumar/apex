@@ -1497,9 +1497,9 @@
       "dashes": false,
       "datasource": "influxdb",
       "decimals": 1,
-      "fill": 1,
+      "fill": 0,
       "gridPos": {
-        "h": 10,
+        "h": 7,
         "w": 24,
         "x": 0,
         "y": 9
@@ -1513,12 +1513,12 @@
         "min": true,
         "rightSide": false,
         "show": true,
-        "sideWidth": 200,
+        "sideWidth": null,
         "total": false,
         "values": true
       },
       "lines": true,
-      "linewidth": 1,
+      "linewidth": 2,
       "links": [],
       "nullPointMode": "null",
       "percentage": false,
@@ -1528,7 +1528,7 @@
       "seriesOverrides": [
         {
           "alias": "Temperature",
-          "color": "#82b5d8"
+          "color": "#f9d9f9"
         }
       ],
       "spaceLength": 10,
@@ -1599,7 +1599,24 @@
         }
       ],
       "timeFrom": null,
-      "timeRegions": [],
+      "timeRegions": [
+        {
+          "colorMode": "yellow",
+          "fill": true,
+          "from": "06:00",
+          "line": false,
+          "op": "time",
+          "to": "18:00"
+        },
+        {
+          "colorMode": "blue",
+          "fill": true,
+          "from": "18:00",
+          "line": false,
+          "op": "time",
+          "to": "06:00"
+        }
+      ],
       "timeShift": null,
       "title": "Aquarium Temperature",
       "tooltip": {
@@ -1648,7 +1665,7 @@
     "list": []
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-7d",
     "to": "now"
   },
   "timepicker": {
@@ -1679,5 +1696,5 @@
   "timezone": "",
   "title": "Aquarium Status",
   "uid": "USuIX9_ik",
-  "version": 35
+  "version": 40
 }
