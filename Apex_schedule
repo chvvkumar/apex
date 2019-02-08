@@ -10,60 +10,69 @@ CO2:            ON: M-F -> 03.00PM - 11:00PM
 
 Heater:         ON: If Temp. < 76 or > 77
 
----------------------------------------
-Virtual Outlet Definitions:
----------------------------------------
+===========================================================
+Physical Outlets
+===========================================================
+LightFront
+Fallback OFF
+Set OFF
+If Output fl_weekday = ON Then ON
+If Output fl_weekend = ON Then ON
+If Tmp > 82.0 Then OFF
+Min Time 010:00 Then OFF
 
-Front lights:
+LightBack
+Fallback OFF
+Set OFF
+If Output bl_weekday = ON Then ON
+If Output bl_weekend = ON Then ON
+If Tmp > 82.0 Then OFF
+Min Time 010:00 Then OFF
+
+CO2
+Fallback OFF
+Set OFF
+If Output co2_weekday = ON Then ON
+If Output co2_weekend = ON Then ON
+If Tmp > 82.0 Then OFF
+
+Heater
+Fallback OFF
+If Tmp < 77.0 Then ON
+If Tmp > 78.0 Then OFF
+
+===========================================================
+Virtual Outlets (weekday schedule)
+===========================================================
 fl_weekday
-fl_weekend
-
-Back lights:
-bl_weekday
-bl_weekend
-
-CO2:
-co2_weekday
-co2_weekend
-
----------------------------------------
-Virtual Outlet Config
----------------------------------------
-fl_weekend
-If Time 10:30 to 17:30 Then ON
-If DoW _MTWTF_ Then OFF
-
-fl_weekday
+Set OFF
 If Time 15:30 to 22:30 Then ON
-If DoW S_____S Then OFF
-
-bl_weekend
-If Time 10:00 to 18:00 Then ON
-If DoW _MTWTF_ Then OFF
+If DoW S-----S Then OFF
 
 bl_weekday
+Set OFF
 If Time 15:00 to 23:00 Then ON
-If DoW S_____S Then OFF
-
-co2_weekend
-If Time 10:30 to 17:30 Then ON
-If DoW _MTWTF_ Then OFF
+If DoW S-----S Then OFF
 
 co2_weekday
-If Time 15:30 to 22:30 Then ON
-If DoW S_____S Then OFF
+Set OFF
+If Time 14:45 to 22:30 Then ON
+If DoW S-----S Then OFF
 
----------------------------------------
-Physical Outlet Config
----------------------------------------
-Set Off
-If Outlet fl_weekday = ON Then ON
-If Outlet fl_weekend = ON Then ON
+===========================================================
+Virtual Outlets (weekend schedule)
+===========================================================
+fl_weekend
+Set OFF
+If Time 10:30 to 15:30 Then ON
+If DoW -MTWTF- Then OFF
 
-Set Off
-If Outlet bl_weekday = ON Then ON
-If Outlet bl_weekend = ON Then ON
+bl_weekend
+Set OFF
+If Time 10:00 to 18:00 Then ON
+If DoW -MTWTF- Then OFF
 
-Set Off
-If Outlet co2_weekday = ON Then ON
-If Outlet co2_weekend = ON Then ON
+co2_weekend
+Set OFF
+If Time 09:45 to 17:30 Then ON
+If DoW -MTWTF- Then OFF
