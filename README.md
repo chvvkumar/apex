@@ -1,3 +1,4 @@
+
 ## Neptune Apex Grafana Dashboard:
 
 A TIG stack config to monitor [Neptune Systems' Apex series of aquarium controllers](https://www.neptunesystems.com/)
@@ -17,7 +18,7 @@ The JSON dashboard can be found within this repo. Import it into your grafana in
 2. "Open XML Access" on your Apex controller should be enabled. This setting can be found in the configuration > Network Setup section
 
 3. Telegraf should be at at-least version 1.9.3
-(Credit to ![@MaxRenaud](https://github.com/MaxRenaud))
+(Credit to [Max Renaud](https://github.com/MaxRenaud))
 
 ## Telegraf input plugin configuration:
 
@@ -50,9 +51,3 @@ Replace the "apex.lan" with your apex controller host name
        ON  = 2
        AOF = 3
        OFF = 4
-
-
-
-  
-
-
