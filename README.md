@@ -17,6 +17,8 @@ The JSON dashboard can be found within this repo. Import it into your grafana in
 
 2. "Open XML Access" on your Apex controller should be enabled. This setting can be found in the configuration > Network Setup section
 
+![Apex Settings](https://i.imgur.com/hb9kzKL.png)
+
 3. Telegraf should be at at-least version 1.9.3
 (Credit to [Max Renaud](https://github.com/MaxRenaud))
 
