@@ -13,7 +13,7 @@ The JSON dashboard can be found within this repo. Import it into your grafana in
 ![Neptune Apex Grafana Dashboard](https://i.imgur.com/8UF6ykv.png)
 
 ## Prerequisites:
-1. Installed and working Inflixdb, Grafana and Telegrafa
+1. Installed and working Inflixdb, Grafana and Telegraf
 
 2. "Open XML Access" on your Apex controller should be enabled. This setting can be found in the configuration > Network Setup section
 
