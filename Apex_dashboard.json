@@ -1,4 +1,46 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_INFLUXDB",
+      "label": "InfluxDB",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "influxdb",
+      "pluginName": "InfluxDB"
+    }
+  ],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "5.1.0"
+    },
+    {
+      "type": "panel",
+      "id": "graph",
+      "name": "Graph",
+      "version": "5.0.0"
+    },
+    {
+      "type": "datasource",
+      "id": "influxdb",
+      "name": "InfluxDB",
+      "version": "5.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "singlestat",
+      "name": "Singlestat",
+      "version": "5.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "text",
+      "name": "Text",
+      "version": "5.0.0"
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -15,7 +57,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 76,
+  "id": null,
+  "iteration": 1590202249065,
   "links": [],
   "panels": [
     {
@@ -72,7 +115,7 @@
         "#7eb26d",
         "#d44a3a"
       ],
-      "datasource": "influxdb",
+      "datasource": "$InfluxDB",
       "decimals": 1,
       "format": "farenheit",
       "gauge": {
@@ -134,7 +177,7 @@
             },
             {
               "params": [
-                "null"
+                "previous"
               ],
               "type": "fill"
             }
@@ -189,7 +232,7 @@
         "#cca300",
         "#d44a3a"
       ],
-      "datasource": "influxdb",
+      "datasource": "$InfluxDB",
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -320,7 +363,7 @@
         "#cca300",
         "#d44a3a"
       ],
-      "datasource": "influxdb",
+      "datasource": "$InfluxDB",
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -451,7 +494,7 @@
         "#cca300",
         "#d44a3a"
       ],
-      "datasource": "influxdb",
+      "datasource": "$InfluxDB",
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -540,7 +583,7 @@
             {
               "key": "name",
               "operator": "=",
-              "value": "fl_weekday"
+              "value": "v_fl_weekday"
             }
           ]
         }
@@ -582,7 +625,7 @@
         "#cca300",
         "#d44a3a"
       ],
-      "datasource": "influxdb",
+      "datasource": "$InfluxDB",
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -671,7 +714,7 @@
             {
               "key": "name",
               "operator": "=",
-              "value": "bl_weekday"
+              "value": "v_bl_weekday"
             }
           ]
         }
@@ -713,7 +756,7 @@
         "#cca300",
         "#d44a3a"
       ],
-      "datasource": "influxdb",
+      "datasource": "$InfluxDB",
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -802,7 +845,7 @@
             {
               "key": "name",
               "operator": "=",
-              "value": "co2_weekday"
+              "value": "v_co_weekday"
             }
           ]
         }
@@ -844,7 +887,7 @@
         "#cca300",
         "#d44a3a"
       ],
-      "datasource": "influxdb",
+      "datasource": "$InfluxDB",
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -975,7 +1018,7 @@
         "#cca300",
         "#d44a3a"
       ],
-      "datasource": "influxdb",
+      "datasource": "$InfluxDB",
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -1106,7 +1149,7 @@
         "#cca300",
         "#d44a3a"
       ],
-      "datasource": "influxdb",
+      "datasource": "$InfluxDB",
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -1195,7 +1238,7 @@
             {
               "key": "name",
               "operator": "=",
-              "value": "fl_weekend"
+              "value": "v_fl_weekend"
             }
           ]
         }
@@ -1237,7 +1280,7 @@
         "#cca300",
         "#d44a3a"
       ],
-      "datasource": "influxdb",
+      "datasource": "$InfluxDB",
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -1326,7 +1369,7 @@
             {
               "key": "name",
               "operator": "=",
-              "value": "bl_weekend"
+              "value": "v_bl_weekend"
             }
           ]
         }
@@ -1368,7 +1411,7 @@
         "#cca300",
         "#d44a3a"
       ],
-      "datasource": "influxdb",
+      "datasource": "$InfluxDB",
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -1457,7 +1500,7 @@
             {
               "key": "name",
               "operator": "=",
-              "value": "co2_weekend"
+              "value": "v_co_weekend"
             }
           ]
         }
@@ -1495,7 +1538,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "influxdb",
+      "datasource": "${DS_INFLUXDB}",
       "decimals": 1,
       "fill": 0,
       "gridPos": {
@@ -1662,10 +1705,26 @@
   "style": "dark",
   "tags": [],
   "templating": {
-    "list": []
+    "list": [
+      {
+        "current": {
+          "tags": [],
+          "text": "InfluxDB",
+          "value": "InfluxDB"
+        },
+        "hide": 0,
+        "label": null,
+        "name": "InfluxDB",
+        "options": [],
+        "query": "influxdb",
+        "refresh": 1,
+        "regex": "",
+        "type": "datasource"
+      }
+    ]
   },
   "time": {
-    "from": "now-7d",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {
@@ -1696,5 +1755,5 @@
   "timezone": "",
   "title": "Aquarium Status",
   "uid": "USuIX9_ik",
-  "version": 40
+  "version": 3
 }
