@@ -4,7 +4,7 @@
 A TIG stack config to monitor [Neptune Systems' Apex series of aquarium controllers](https://www.neptunesystems.com/)
 
 ## Demo:
-https://grafana.challa.co/d/USuIX9_ik/aquarium-status?refresh=5s&orgId=1&kiosk
+https://grafana.challa.co/d/aiCCWUWnk/aquarium-status?orgId=1&kiosk
 
 ## Dashboard:
 
