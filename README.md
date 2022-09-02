@@ -7,7 +7,8 @@ A TIG stack config to monitor [Neptune Systems' Apex series of aquarium controll
 
 The JSON dashboard can be found within this repo. Import it into your grafana instance.
 
-![image](https://user-images.githubusercontent.com/16548147/188169743-97ea211f-deca-4963-971c-7740aeba8207.png)
+![image](https://user-images.githubusercontent.com/16548147/188246451-89074388-e97a-4db1-9d9c-3a8362d06fc4.png)
+
 
 
 ## Prerequisites:
