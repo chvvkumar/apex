@@ -3,20 +3,18 @@
 
 A TIG stack config to monitor [Neptune Systems' Apex series of aquarium controllers](https://www.neptunesystems.com/)
 
-## Demo:
-https://grafana.challa.co/d/aiCCWUWnk/aquarium-status?orgId=1&kiosk
-
 ## Dashboard:
 
 The JSON dashboard can be found within this repo. Import it into your grafana instance.
 
-![image](https://user-images.githubusercontent.com/16548147/142708956-0275fff5-369c-4370-9382-723028dab3ef.png)
+![image](https://user-images.githubusercontent.com/16548147/188169743-97ea211f-deca-4963-971c-7740aeba8207.png)
 
 
 ## Prerequisites:
-1. Installed and working Influxdb, Grafana and Telegraf
+Installed and working Influxdb, Grafana and Telegraf
 
-2. "Open XML Access" on your Apex controller should be enabled. This setting can be found in the configuration > Network Setup section
+For Apex Classic:
+"Open XML Access" on your Apex controller should be enabled. This setting can be found in the configuration > Network Setup section
 
 ![Apex Settings](https://i.imgur.com/hb9kzKL.png)
 
@@ -25,7 +23,7 @@ The JSON dashboard can be found within this repo. Import it into your grafana in
 
 ## Telegraf input plugin configuration:
 
-Replace the "apex.lan" with your apex controller host name
+Replace the "apex.lan" with your apex controller host name. Here I am using two Apex controllers.
 
     ###############################################################################
     
@@ -33,12 +31,12 @@ Replace the "apex.lan" with your apex controller host name
     
     ###############################################################################
     
+    #Apex Aquarium Controller
     [[inputs.neptune_apex]]
-    
-    servers = [ "http://apex.lan" ]
-    
-    #response_timeout = "5s"
-    
+    servers = [
+                    "http://apex.lan:1982",
+                    "http://a3apexjr.lan"
+            ]    
     ###############################################################################
     #                            PROCESSOR PLUGINS                                #
     ###############################################################################
