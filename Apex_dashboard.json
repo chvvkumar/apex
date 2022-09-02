@@ -74,7 +74,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 6,
+        "h": 5,
         "w": 6,
         "x": 0,
         "y": 0
@@ -83,6 +83,9 @@
       "links": [],
       "maxDataPoints": 100,
       "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
@@ -91,9 +94,7 @@
           "fields": "",
           "values": false
         },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true,
-        "text": {}
+        "textMode": "auto"
       },
       "pluginVersion": "9.1.2",
       "targets": [
@@ -150,283 +151,7 @@
         }
       ],
       "title": "Temperature",
-      "type": "gauge"
-    },
-    {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "$InfluxDB"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "decimals": 2,
-          "mappings": [
-            {
-              "options": {
-                "match": "null",
-                "result": {
-                  "text": "N/A"
-                }
-              },
-              "type": "special"
-            }
-          ],
-          "max": 7.5,
-          "min": 6.5,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "dark-red",
-                "value": 4
-              },
-              {
-                "color": "red",
-                "value": 5
-              },
-              {
-                "color": "semi-dark-orange",
-                "value": 6
-              },
-              {
-                "color": "super-light-green",
-                "value": 6.5
-              },
-              {
-                "color": "green",
-                "value": 7
-              },
-              {
-                "color": "dark-green",
-                "value": 7.5
-              },
-              {
-                "color": "super-light-blue",
-                "value": 8
-              },
-              {
-                "color": "blue",
-                "value": 9
-              },
-              {
-                "color": "dark-blue",
-                "value": 10
-              }
-            ]
-          },
-          "unit": "pH"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 6,
-        "x": 6,
-        "y": 0
-      },
-      "id": 44,
-      "links": [],
-      "maxDataPoints": 100,
-      "options": {
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true,
-        "text": {}
-      },
-      "pluginVersion": "9.1.2",
-      "targets": [
-        {
-          "datasource": {
-            "uid": "$InfluxDB"
-          },
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "previous"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "neptune_apex",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "name",
-              "operator": "=",
-              "value": "pH"
-            },
-            {
-              "condition": "AND",
-              "key": "source",
-              "operator": "=~",
-              "value": "/^$Apex$/"
-            }
-          ]
-        }
-      ],
-      "title": "pH",
-      "type": "gauge"
-    },
-    {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "$InfluxDB"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "decimals": 1,
-          "mappings": [
-            {
-              "options": {
-                "match": "null",
-                "result": {
-                  "text": "N/A"
-                }
-              },
-              "type": "special"
-            }
-          ],
-          "max": 3,
-          "min": 0,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "dark-blue",
-                "value": null
-              },
-              {
-                "color": "green",
-                "value": 1
-              },
-              {
-                "color": "red",
-                "value": 2
-              }
-            ]
-          },
-          "unit": "amp"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 6,
-        "x": 12,
-        "y": 0
-      },
-      "id": 35,
-      "links": [],
-      "maxDataPoints": 100,
-      "options": {
-        "orientation": "horizontal",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true,
-        "text": {}
-      },
-      "pluginVersion": "9.1.2",
-      "targets": [
-        {
-          "datasource": {
-            "uid": "$InfluxDB"
-          },
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "previous"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "neptune_apex",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "name",
-              "operator": "=",
-              "value": "Amp_4"
-            },
-            {
-              "condition": "AND",
-              "key": "source",
-              "operator": "=~",
-              "value": "/^$Apex$/"
-            }
-          ]
-        }
-      ],
-      "title": "EB8 Current",
-      "type": "gauge"
+      "type": "stat"
     },
     {
       "datasource": {
@@ -472,15 +197,18 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 6,
+        "h": 5,
         "w": 6,
-        "x": 18,
+        "x": 6,
         "y": 0
       },
       "id": 40,
       "links": [],
       "maxDataPoints": 100,
       "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
@@ -489,9 +217,7 @@
           "fields": "",
           "values": false
         },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true,
-        "text": {}
+        "textMode": "auto"
       },
       "pluginVersion": "9.1.2",
       "targets": [
@@ -543,7 +269,7 @@
         }
       ],
       "title": "Power",
-      "type": "gauge"
+      "type": "stat"
     },
     {
       "datasource": {
@@ -597,10 +323,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 3,
+        "h": 5,
         "w": 4,
-        "x": 0,
-        "y": 6
+        "x": 12,
+        "y": 0
       },
       "id": 33,
       "links": [],
@@ -732,10 +458,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 3,
+        "h": 5,
         "w": 4,
-        "x": 4,
-        "y": 6
+        "x": 16,
+        "y": 0
       },
       "id": 41,
       "links": [],
@@ -861,10 +587,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 3,
+        "h": 5,
         "w": 4,
-        "x": 8,
-        "y": 6
+        "x": 20,
+        "y": 0
       },
       "id": 37,
       "links": [],
@@ -949,6 +675,284 @@
         "type": "influxdb",
         "uid": "$InfluxDB"
       },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 2,
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "max": 7.5,
+          "min": 6.5,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "dark-red",
+                "value": 4
+              },
+              {
+                "color": "red",
+                "value": 5
+              },
+              {
+                "color": "semi-dark-orange",
+                "value": 6
+              },
+              {
+                "color": "super-light-green",
+                "value": 6.5
+              },
+              {
+                "color": "green",
+                "value": 7
+              },
+              {
+                "color": "dark-green",
+                "value": 7.5
+              },
+              {
+                "color": "super-light-blue",
+                "value": 8
+              },
+              {
+                "color": "blue",
+                "value": 9
+              },
+              {
+                "color": "dark-blue",
+                "value": 10
+              }
+            ]
+          },
+          "unit": "pH"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 0,
+        "y": 5
+      },
+      "id": 44,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.1.2",
+      "targets": [
+        {
+          "datasource": {
+            "uid": "$InfluxDB"
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "previous"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "neptune_apex",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "name",
+              "operator": "=",
+              "value": "pH"
+            },
+            {
+              "condition": "AND",
+              "key": "source",
+              "operator": "=~",
+              "value": "/^$Apex$/"
+            }
+          ]
+        }
+      ],
+      "title": "pH",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "$InfluxDB"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "max": 3,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              },
+              {
+                "color": "red",
+                "value": 2
+              }
+            ]
+          },
+          "unit": "amp"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 6,
+        "y": 5
+      },
+      "id": 35,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.1.2",
+      "targets": [
+        {
+          "datasource": {
+            "uid": "$InfluxDB"
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "previous"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "neptune_apex",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "name",
+              "operator": "=",
+              "value": "Amp_4"
+            },
+            {
+              "condition": "AND",
+              "key": "source",
+              "operator": "=~",
+              "value": "/^$Apex$/"
+            }
+          ]
+        }
+      ],
+      "title": "EB8 Current",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "$InfluxDB"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -996,10 +1000,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 3,
+        "h": 4,
         "w": 4,
         "x": 12,
-        "y": 6
+        "y": 5
       },
       "id": 42,
       "links": [],
@@ -1130,10 +1134,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 3,
+        "h": 4,
         "w": 4,
         "x": 16,
-        "y": 6
+        "y": 5
       },
       "id": 23,
       "links": [],
@@ -1262,10 +1266,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 3,
+        "h": 4,
         "w": 4,
         "x": 20,
-        "y": 6
+        "y": 5
       },
       "id": 43,
       "links": [],
@@ -1526,7 +1530,7 @@
           "fill": false,
           "line": true,
           "op": "gt",
-          "value": 77,
+          "value": 78,
           "yaxis": "left"
         },
         {
@@ -1536,7 +1540,7 @@
           "line": true,
           "lineColor": "#1f78c1",
           "op": "lt",
-          "value": 76,
+          "value": 77,
           "yaxis": "left"
         }
       ],
@@ -1558,7 +1562,7 @@
           "to": "06:00"
         }
       ],
-      "title": "Aquarium Temperature",
+      "title": "Temperature and Heater",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1671,6 +1675,32 @@
                   "fixedColor": "super-light-orange",
                   "mode": "fixed"
                 }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "orange",
+                      "value": 6.6
+                    },
+                    {
+                      "color": "blue",
+                      "value": 6.7
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "custom.thresholdsStyle",
+                "value": {
+                  "mode": "line"
+                }
               }
             ]
           },
@@ -1710,7 +1740,7 @@
               {
                 "id": "custom.hideFrom",
                 "value": {
-                  "legend": true,
+                  "legend": false,
                   "tooltip": false,
                   "viz": false
                 }
@@ -1722,6 +1752,31 @@
               {
                 "id": "max",
                 "value": 5
+              },
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "-1": {
+                        "color": "green",
+                        "index": 1,
+                        "text": "On"
+                      },
+                      "-3": {
+                        "color": "purple",
+                        "index": 0,
+                        "text": "Off"
+                      },
+                      "-4": {
+                        "color": "dark-red",
+                        "index": 2,
+                        "text": "Unavailable"
+                      }
+                    },
+                    "type": "value"
+                  }
+                ]
               }
             ]
           }
@@ -1867,7 +1922,7 @@
           ]
         }
       ],
-      "title": "Aquarium pH",
+      "title": "pH and CO2",
       "type": "timeseries"
     },
     {
@@ -2204,7 +2259,7 @@
     ]
   },
   "time": {
-    "from": "now-7d",
+    "from": "now-2d",
     "to": "now"
   },
   "timepicker": {
@@ -2235,6 +2290,6 @@
   "timezone": "",
   "title": "Aquarium Status",
   "uid": "aiCCWUWnk",
-  "version": 38,
+  "version": 44,
   "weekStart": ""
 }
