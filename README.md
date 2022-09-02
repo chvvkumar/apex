@@ -25,7 +25,7 @@ The JSON dashboard can be found within this repo. Import it into your grafana in
 
 ## Telegraf input plugin configuration:
 
-Replace the "apex.lan" with your apex controller host name
+Replace the "apex.lan" with your apex controller host name. Here I am using two Apex controllers.
 
     ###############################################################################
     
@@ -33,12 +33,12 @@ Replace the "apex.lan" with your apex controller host name
     
     ###############################################################################
     
+    #Apex Aquarium Controller
     [[inputs.neptune_apex]]
-    
-    servers = [ "http://apex.lan" ]
-    
-    #response_timeout = "5s"
-    
+    servers = [
+                    "http://apex.lan:1982",
+                    "http://a3apexjr.lan"
+            ]    
     ###############################################################################
     #                            PROCESSOR PLUGINS                                #
     ###############################################################################
