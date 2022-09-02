@@ -3,14 +3,11 @@
 
 A TIG stack config to monitor [Neptune Systems' Apex series of aquarium controllers](https://www.neptunesystems.com/)
 
-## Demo:
-https://grafana.challa.co/d/aiCCWUWnk/aquarium-status?orgId=1&kiosk
-
 ## Dashboard:
 
 The JSON dashboard can be found within this repo. Import it into your grafana instance.
 
-![image](https://user-images.githubusercontent.com/16548147/142708956-0275fff5-369c-4370-9382-723028dab3ef.png)
+![image](https://user-images.githubusercontent.com/16548147/188169743-97ea211f-deca-4963-971c-7740aeba8207.png)
 
 
 ## Prerequisites:
