@@ -31,10 +31,10 @@ Min Time 010:00 Then OFF
 
 CO2
 Fallback OFF
-Set OFF
-If Output co2_weekday = ON Then ON
-If Output co2_weekend = ON Then ON
-If Tmp > 82.0 Then OFF
+Set ON
+If Time 09:30 to 20:00 Then OFF
+If Output Maintenance = ON Then OFF
+If FeedA 015 Then OFF
 
 Heater
 Fallback OFF
