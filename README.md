@@ -14,6 +14,9 @@ The JSON dashboard can be found within this repo. Import it into your grafana in
 ## Prerequisites:
 Installed and working Influxdb, Grafana and Telegraf
 
+For newer Apex:
+Nothing needs changing. My A3 Apex worked right out of the box.
+
 For Apex Classic:
 "Open XML Access" on your Apex controller should be enabled. This setting can be found in the configuration > Network Setup section
 
